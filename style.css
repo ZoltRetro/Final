@@ -1,0 +1,321 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.body{
+    font-family: 'Metamorphous', sans-serif;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap');
+.container{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(https://st3.depositphotos.com/9303990/17020/i/450/depositphotos_170203648-stock-photo-wolf-in-silhouette-to-thunderstorm.jpg);
+     background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.leaderboard{
+    
+    width: 400px;
+    position: relative;
+    right: 35%;
+    bottom: 420px;
+    
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-image: url(https://yt3.googleusercontent.com/-JEbTh2hk9PmNvuOFAoMyK-3IHVZ9H6gPK_g5MPwTLCEeAHyKTcb9euCaMTTLucdE6jEzGePAw=s900-c-k-c0x00ffffff-no-rj);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #00D9FF;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow:
+        0 0 10px #00D9FF,
+        0 0 25px #008CFF,
+        inset 0 0 15px #008CFF;
+}
+
+
+.leaderboard-header{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #070707;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    animation:
+        electricBlue 2s infinite alternate,
+        lightningFlicker 3s infinite;
+
+}
+
+.playerOne, .playerTwo, .ties{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left:100px;
+    color: #080808;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    animation:
+        electricBlue 2s infinite alternate,
+        lightningFlicker 3s infinite;
+}
+
+.game-info{
+    text-align: center;
+    margin-bottom: 25px;
+    width: 400px;
+    height: 180px;
+    color: #080808;
+    background-image: url(https://img.freepik.com/premium-photo/3d-render-blue-flame-fire-abstract-black-background_685067-732.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    position: relative;
+    bottom:20px;
+    left: 56.7%;
+    
+    transform:translateX(-50%);
+    font-size: 1.8rem;
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 10px;
+    animation:
+        electricBlue 2s infinite alternate,
+        lightningFlicker 3s infinite;
+
+}
+
+.game-board{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    position: relative;
+    left: 40%;
+    top:20%;
+    transform:translateX(-50%);
+    background-image: url(https://img.freepik.com/premium-photo/abstract-blue-lightning-vector-science-background_1036975-221322.jpg?w=2000);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(18, 85, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.cell:hover{
+    background-color: #05b2f7;
+}
+
+.cell.taken{
+    pointer-events: none;
+    background-color: #3803c9;
+}
+.cell:active{
+    background-color: #0e0653d5;
+}
+
+@keyframes electricBlue {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #00D9FF,
+            0 0 15px #00D9FF;
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px #00FFFF,
+            0 0 30px #008CFF,
+            0 0 50px #008CFF;
+    }
+}
+
+@keyframes electricPurple {
+    0%, 100% {
+        text-shadow:
+            0 0 5px #A855F7,
+            0 0 15px #A855F7;
+    }
+
+    50% {
+        text-shadow:
+            0 0 15px #C084FC,
+            0 0 30px #9333EA,
+            0 0 50px #7000FF;
+    }
+}
+
+#lightningContainer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.lightning {
+    position: absolute;
+    width: 35px;
+    height: 65px;
+
+    background-image:url(ting.png);
+
+    clip-path: polygon(
+        55% 0,
+        100% 0,
+        65% 40%,
+        100% 40%,
+        15% 100%,
+        35% 55%,
+        0 55%
+    );
+
+    filter:
+        drop-shadow(0 0 5px #00d9ff)
+        drop-shadow(0 0 15px #008cff);
+
+    animation: sparkFlash 0.35s ease-out forwards;
+}
+
+@keyframes sparkFlash {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+
+    25% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+}
+
+.settingsContainer{
+    position: relative;
+    right:200px;
+}
+
+.lightning-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    left:1450px;
+    top:450px;
+    padding: 16px 35px;
+
+    background: linear-gradient(135deg, #07182d, #101044);
+    color: #00eaff;
+
+    border: 2px solid #00d9ff;
+    border-radius: 10px;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 3px;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    box-shadow:
+        0 0 10px #008cff,
+        0 0 25px #0055ff,
+        inset 0 0 15px #003b80;
+
+    transition: 0.3s ease;
+}
+
+/* Lightning symbol */
+.bolt {
+    font-size: 25px;
+    color: #ffffff;
+
+    text-shadow:
+        0 0 5px #00eaff,
+        0 0 15px #008cff,
+        0 0 25px #0055ff;
+}
+
+/* Hover effect */
+.lightning-btn:hover {
+    color: white;
+    background: linear-gradient(135deg, #006eff, #7000ff);
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 35px #008cff,
+        0 0 60px #0044ff;
+
+    transform: scale(1.05);
+}
+
+/* Lightning pulse */
+.lightning-btn:active {
+    transform: scale(0.95);
+
+    box-shadow:
+        0 0 25px #00ffff,
+        0 0 60px #008cff,
+        inset 0 0 25px #00d9ff;
+}
+
+/* Moving electric shine */
+.lightning-btn::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 217, 255, 0.4),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+    animation: electricShine 3s infinite;
+}
+
+@keyframes electricShine {
+    100% {
+        left: 150%;
+    }
+}

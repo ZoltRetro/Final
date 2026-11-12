@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metamorphous&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="lightningContainer"></div>
+    <div class="container">
+    <audio id="lightningSound" src="fart.mp3" preload="auto"></audio>
+    <audio id="wolfHowl" src="alpha.mp3" preload="auto"></audio>
+    <audio id="explosionSound" src="sploink.mp3" preload="auto"></audio>
+    
+    <button onclick="resetButton()" class="lightning-btn" id="resetButton">Reset Button</button>
+        
+    
+    <div class="game-info">
+        <h1 >Tic Tac Toe</h1>
+        <p >Player One: X</p>
+        <p >Player Two: O</p>
+        <p id="playerTurn" >Player One's Turn</p>
+    </div>
+    <div class="game-board">
+        <button class="cell" data-cell-index="0" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="1" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="2" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="3" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="4" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="5" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="6" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="7" onclick="explosion()"></button>
+        <button class="cell" data-cell-index="8" onclick="explosion()"></button>
+    </div>
+    
+    <div class="leaderboard">
+            <div class="leaderboard-header">
+                <h2 >Leaderboard</h2>
+            </div>
+            <div class="playerOne" id="playerOneScoreDisplay">Player One: 0</div>
+            <div class="playerTwo" id="playerTwoScoreDisplay">Player Two: 0</div>
+            <div class="ties" id="tiesScoreDisplay">Ties: 0</div>
+        </div>
+    <!-- <div class="settingsContainer">
+        <ul>
+            <li class="settingOne"></li>
+            <li class="settingTwo"></li>
+            <li class="settingThree"></li>
+            <li class="settingFour"></li>
+        </ul>
+    </div>
+     -->
+    <script src="poop.js"></script>
+</body>
+</html>
